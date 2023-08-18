@@ -44,16 +44,18 @@ There are 3 areas: programming and computing concepts, skills, and scientific co
 1. Planetary surface temperature is controlled by solar radiation, albedo, and greenhouse gases
 
 
-## Modules
+## Modules and learning goals
 
 1. Computers and computing environments
 2. Python basics
 3. Functions
 4. Flow control
-5. Data structures
-6. Input and output
-7. Classes and objects
-8. Plotting with Matplotlib
+5. Introduction to Python tools for scientific computing
+
+
+...(THE BELOW TO BE DEVELOPED FURTHER)
+
+8. Classes and objects
 9. Arrays and NumPy
 10. Pandas and Xarray
 11. Applications
@@ -95,21 +97,159 @@ There are 3 areas: programming and computing concepts, skills, and scientific co
 
 #### Computing concept and skill goals
 
-- Use the assignment operator to create or update a variable
-- Define dynamicically typed programming language
-- Identify the basic data types in Python
-- Determine the type of a variable
-- Convert between basic data types
-- Execute Python commands in an interpreter
-- Use %whos to list the variables stored in the memory of the python kernel
-- Collect user input using the input() command
-- Describe the list, dict, tuple, and set data types; apply lists and dicts; recognize tuples and sets
-- Define immutable versus mutable objects
+- Operators
+  - Perform calculations using Python arithmetic operators
+  - Describe operator order-of-precedence
+- Variables (basic types)
+  - Use the assignment operator to create or update a variable
+  - Define dynamicically typed programming language
+  - Identify the basic data types in Python
+  - Determine the type of a variable
+  - Convert between basic data types
+  - Execute Python commands in an interpreter
+  - Use %whos to list the variables stored in the memory of the python kernel
+  - Collect user input using the input() command
+- Variables (more complex types)
+  - Describe the str, list, dict, tuple, and set data types
+  - Define and extract elements from strs, lists, and dicts
+  - Recognize tuples and sets
+  - Create compound data types (e.g., a dict that contains lists as values)
+  - Define immutable versus mutable data types
 
 #### Scientific concept goals and level
 - Define greenhouse gas and greenhouse effect 1
 - Explain the faint young sun concept 1
 - Combine the Stefan-Boltzmann law with incoming solar energy to solve for earth's equilibrium radiating temperature 2
+- Explain how and why irradiance is different for different planets
+
+### Functions
+
+#### Computing concept and skill goals
+
+- Working with functions
+  - Call functions using arguments by position or keyword
+  - Handle function returns, including multiple returns
+  - Import modules using the `import <name>`, `from <module> import`, and `import <name> as <shorthand>` syntax patterns
+  - Call functions imported from modules using these different methods
+  - Use the question mark syntax to get help on a function
+- Writing your own functions
+  - Describe why functions are useful
+  - Define "parameter" and "argument"
+  - Write functions that use required and optional arguments
+  - Write functions that return one or more values
+  - Explain the difference between argument passing by copy or by reference, and what kinds of variables they apply to
+- Optional
+  - Understand (+ use) what the **kwargs pattern means
+  - Understand (+ use) what the *args pattern means
+  - Use recursion
+  - Write a docstring to provide help for your function
+
+#### Science concept goals
+
+TBA
+
+### Flow control
+
+- Conditionals
+  - Use `if-elif-else` to branch code execution
+  - Use `and`, `or`, `not`
+  - Optional
+    - Use the `^` (xor) operator and xor() function
+    - Use bitwise operators `&, |, ^, ~`
+    - Use bitwise shift operators `<<, >>`
+- Loops
+  - Explain why loops are useful in general
+  - `for` loops
+    - Explain what a `collection` means in the context of looping through items in a collection
+    - Describe and use the `range` function (as you would a list)
+    - Use a `for` loop:
+      - to iterate through items in a list
+      - with a counter variable and the `range` function
+      - do the above using different start, end, and increment values
+      - do it with decrementing (negative increment)
+  - `while` loops
+    - Identify circumstances where a `for` or `while` loop is preferable
+    - Write a `while` loop
+    - The above with an "escape variable" (e.g., `done == True`)
+  - Use `break` to get out of a loop (and explain why that's not usually best practice)
+
+
+#### Science concept goals
+
+TBA
+
+### Tools for scientific computing
+
+#### Computing concepts and skills
+
+- Arrays and NumPy
+  - Create 1D arrays using `array, zeros, ones`, and use them in arithmetic expressions
+  - Describe the differences between arrays and lists
+  - Use `arange` and `linspace` to create arrays that are sequences of values
+  - Access elements or subsets of arrays using slicing
+  - Use the size and shape methods to interrogate arrays
+  - Use the `mean, amax, amin, median, sum` functions with arrays
+  - Use the `maximum` and `minimum` functions to find the min/max on an element-by-element basis
+  - Explain the difference between creating a copy of a reference to an array and creating a new copy of an array using copy()
+  - Explain what array dereferencing is, and how to avoid it
+  - Create 2D or 3D arrays
+  - Create arrays of type other than float
+  - Use boolean array expressions to access selected array elements
+  - Optional
+    - Use `argmin, argmax, where` to find array indices where are condition is true
+    - Sort an array
+    - Flip an array
+    - Generate and apply random numbers using the np.random module's `rand` and `randn` functions
+- Matplotlib
+  - import the pyplot sub-package
+  - x-y plotting basics
+    - use the `plot` function with lists or arrays to create basic x-y plots
+    - recognize that the `scatter` function is similar but with some differences (e.g., defaults to marker rather than line)
+    - vary the line/marker style and color
+    - add axis labels to a plot
+    - add a title to a plot
+    - plot multiple quantities on the same plot
+    - use a legend
+    - set the axis extents with `xlim, ylim`
+    - add gridlines
+    - change line or marker opacity, color, style, and width
+  - anatomy of matlplotlib plots and axes
+    - explain what a `plot` and an `axis` are
+    - use `gcf` to get the current figure and `gca` to get the current axis
+    - use `figure()` to create a new figure and get a handle to it
+    - access two examples of functions or properties from `ax` (e.g., invert_yaxis)
+    - optional
+      - use `subplots()` to create one or more axes in a figure and get handles to the figure and axis
+      - create a plot with multiple axes
+  - optional
+    - use `bar` to make bar charts with standard deviation
+    - name 2 or 3 examples of Python plotting packages
+    - use `fill` to fill in areas
+    - use `text` to add text
+- file I/O
+  - basics
+    - open, write to, and close a text file using `open, write, close`
+    - do the above using the `with` syntax
+    - open, read from, and close a text file using `with, open, read`
+    - read lines individually `readlines`
+    - split lines by column using string .split() (potential exercise: file with "Mercury 1\nVenus 2..." etc., read the lines then loop over lines to create a dict with name as key and number as int value)
+    - as above, for csv files
+  - via numpy
+    - define what a comma-separated value or csv file is
+    - read a file with delimited numbers (only) using `loadtxt`
+    - read a file with missing values and/or text content using `genfromtxt`
+    - skip header rows when using either of the above functions
+- pandas
+  - Define tabular data
+  - Create a DataFrame directly from sample data
+  - Read a csv into a DataFrame
+  - Read other tabular data using read_table
+  - Display a DataFrame as a table
+  - Add columns to a DataFrame
+  - Plot data from two columns from a DataFrame
+  - Write modified DataFrame contents to a text file
+
+
 
 
 
@@ -117,7 +257,7 @@ There are 3 areas: programming and computing concepts, skills, and scientific co
 
 ### Module 1: Getting started with scientific computing
 
-#### Class 1
+#### Introduction
 
 - Introduction and mini-lecture on computing in geoscience (10 min)
 - Intro to course and syllabus (10)
@@ -136,7 +276,7 @@ There are 3 areas: programming and computing concepts, skills, and scientific co
 - Mini-lecture on geologic time by powers of ten (10)
 - Wrap up and recap (5)
 
-#### Class 2
+#### Operators
 
 - Motivating example and mini-lec on planetary temperature; take notes in a markdown cell(s) with latex math in today's notebook. Part 1: energy balance in words and formula for power input rate. (10)
   - Make a title, and a heading "power from the sun"
@@ -180,7 +320,7 @@ There are 3 areas: programming and computing concepts, skills, and scientific co
 
 ### Module 2: Python Basics
 
-#### Class 3
+#### Variables, part 1
 
 - Science opener: earth radiating temperature. Greenhouse effect. Radiating temperature on Mars, Venus, Mercury. (10)
 - Variables. Notice that we're having to re-type numbers. Useful if you could store values for later reuse. That's what variables are. Demo: define sigma in a variable then reuse. (5)
@@ -198,14 +338,17 @@ There are 3 areas: programming and computing concepts, skills, and scientific co
   - nbex: run %whos in a code cell; make a note to yourself that this is a notebook command not a Python function. (5)
 
 
-#### Class 4
+#### Variables, part 2
 
 - String indexing.
   - nbex: epoch = "Anthropocene". len(epoch). epoch[0]. Use brackets to print the "ro" in "Anthropocene" (5)
   - try epoch[12]. Lesson: 0-based indexing. (5)
   - ranges with colon. Ex: epoch[2:7]. epoch[:2]. epoch[7:]. (5)
   - try period = "Cretaceous". Use slicing to print out the phrase 'Creta' means 'chalk'. (5)
-- Recap
+- REST TO BE ADDED... lists, dicts, tuples, sets - consider learning goals of being able to work with list and dict, and being able to describe and recognize a tuple or set
+
+
+
 
 
 
